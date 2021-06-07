@@ -1,6 +1,92 @@
 @import "variables";
+@import "media-queries";
+
+html, body {
+	min-height: 100vh;
+}
 
 html {
-	background-color: $color-background;
-	color: $color-text;
+	background-color: $background-color;
+	color: $text-color;
+	font-size: $small-font-size;
+
+	@include respond-above(sm) {
+		font-size: $base-font-size;
+	}
+}
+
+body {
+	display: grid;
+	grid-template: "header" auto "nav" auto "main" 1fr "footer" auto / 1fr;
+
+	font-family: $font-body;
+	line-height: 1.4;
+	
+	@include respond-above(sm) {
+		grid-template: "header header" auto "nav nav" auto "main sidebar" 1fr "footer footer" auto / 1fr auto;
+	}
+
+	& > header {
+		grid-area: header;
+	}
+	& > nav {
+		grid-area: nav;
+	}
+	& > main {
+		grid-area: main;
+	}
+	& > .sidebar {
+		grid-area: sidebar;
+	}
+	& > footer {
+		grid-area: footer;
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	&:hover, &:visited {
+		color: inherit;
+	}
+}
+
+h1 { font-size: 1rem; }
+
+/**********************************************************************************************************************/
+
+body > header {
+	display: grid;
+	grid-template: "logo" auto "nav" auto / 1fr;
+	align-items: baseline;
+	gap: 0 1rem;
+	
+	background: $background-alt-gradient;
+	
+	@include respond-above(sm) {
+		grid-template: "logo nav" auto / auto 1fr;
+	}
+	
+	& > .logo {
+		padding: 1rem;
+		grid-area: logo;
+		font-family: $font-heading;
+		font-size: 3rem;
+		line-height: 1;
+		text-transform: uppercase;
+		background: $background-alt-color;
+	}
+
+	& > nav {
+		grid-area: nav;
+	}
+}
+
+.main-navbar {
+	display: flex;
+	gap: 1rem;
+
+	a {
+		display: inline-block;
+	}
 }

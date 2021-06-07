@@ -1,8 +1,22 @@
 // Colors
+
 $color-black: hsl(180, 5%, 10%);
-$color-white: hsl(0, 5%, 85%);
-$color-red: hsl(0, 90%, 60%);
+$color-white: hsl(0, 5%, 90%);
+$color-red: hsl(0, 50%, 50%);
 
-$color-background: $color-black;
+$background-color: $color-black;
 
-$color-text: $color-white;
+$background-alt-color: $color-red;
+$background-alt-gradient: linear-gradient(260deg, $color-black 0, $color-black 1.5em, $color-white 2em, $color-red 10em);
+
+$text-color: $color-white;
+
+// Fonts
+
+$font-body: 'Amble', sans-serif;
+$font-heading: 'Hansen', serif;
+
+// Sizes
+
+$small-font-size: 12px;
+$base-font-size: 16px;

@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'Hansen';
+	/*src: url('../fonts/webfont.eot');*/ /*IE9+ Compat Modes*/
+	src: /*url('webfont.eot?#iefix') format('embedded-opentype')*/ /*IE6-IE8*/
+		 /*, url('webfont.woff2') format('woff2')*/ /*Super modern browsers*/
+		 /*, url('webfont.woff') format('woff')*//* Modern browsers*/
+		 url('../fonts/Hansen.ttf')  format('truetype') /* Safari, Android, iOS */
+		 /*, url('webfont.svg#FontName') format('svg')*/
+		 ; /*Legacy iOS*/
+}
+
+@font-face {
+	font-family: 'Amble';
+	/*src: url('../fonts/webfont.eot');*/ /*IE9+ Compat Modes*/
+	src: /*url('webfont.eot?#iefix') format('embedded-opentype')*/ /*IE6-IE8*/
+		 /*, url('webfont.woff2') format('woff2')*/ /*Super modern browsers*/
+		 /*, url('webfont.woff') format('woff')*//* Modern browsers*/
+		 url('../fonts/Amble-Regular.ttf')  format('truetype') /* Safari, Android, iOS */
+		 /*, url('webfont.svg#FontName') format('svg')*/
+		 ; /*Legacy iOS*/
+}
