@@ -20,3 +20,11 @@ $font-heading: 'Hansen', serif;
 
 $small-font-size: 12px;
 $base-font-size: 16px;
+
+@function typographic-scale($i_level: 0) {
+	$typographic-scale-coefficient: 1.25;
+	@if $i_level == 0 {
+		@return 1rem;
+	}
+	@return typographic-scale($i_level - 1) * $typographic-scale-coefficient;
+}

@@ -35,7 +35,7 @@ body {
 	& > main {
 		grid-area: main;
 	}
-	& > .sidebar {
+	& > .main-sidebar {
 		grid-area: sidebar;
 	}
 	& > footer {
@@ -51,7 +51,11 @@ a {
 	}
 }
 
-h1 { font-size: 1rem; }
+h1 { font-size: typographic-scale(4); font-family: $font-heading; text-transform: uppercase; }
+h2 { font-size: typographic-scale(3); font-family: $font-heading; text-transform: capitalize; }
+h3 { font-size: typographic-scale(2); font-family: $font-heading; }
+h4 { font-size: typographic-scale(1); font-family: $font-heading; }
+h5 { font-size: typographic-scale(0); font-family: $font-heading; }
 
 /**********************************************************************************************************************/
 
@@ -83,10 +87,22 @@ body > header {
 }
 
 .main-navbar {
+	padding: 1rem;
+
 	display: flex;
 	gap: 1rem;
 
 	a {
 		display: inline-block;
 	}
+}
+
+body > main {
+	max-width: 60em;
+	padding: 1rem;
+}
+
+body > .main-sidebar {
+	display: none;
+	padding: 1rem;
 }

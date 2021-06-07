@@ -3,12 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{page.title}} | SimRacing Corner</title>
+	<title>{{page.title}} | {{site.title}}</title>
 	<link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
 	{% include header.html %}
 	<main>{{content}}</main>
+	{% include sidebar.html %}
 	{% include footer.html %}
 </body>
 </html>
