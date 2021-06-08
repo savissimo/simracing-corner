@@ -1,5 +1,16 @@
 - name: Home
   link: /
+- name: Resources
+  link: /resources
+  children:
+    - name: Tracks
+      link: /tracks
+    - name: Liveries
+      link: /liveries
+    - name: Cars
+      link: /cars
+    - name: Tools
+      link: /tools
 - name: Blog
   link: /blog
 - name: About me

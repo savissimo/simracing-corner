@@ -1,15 +1,37 @@
 // Colors
 
-$color-black: hsl(180, 5%, 10%);
+@function make-lighter($i_color, $i_level: 1) {
+	@return scale-color($i_color, $lightness: 20%*$i_level, $saturation: -10%*$i_level);
+}
+
+@function make-darker($i_color, $i_level: 1) {
+	@return make-lighter($i_color, -$i_level);
+}
+
+@function shade($i_color, $i_level: 1) {
+	@return mix($color-black, $i_color, 20% * $i_level);
+}
+
+@function tint($i_color, $i_level: 1) {
+	@return mix($color-white, $i_color, 20% * $i_level);
+}
+
+$color-black: hsl(180, 20%, 10%);
 $color-white: hsl(0, 5%, 90%);
+$color-gray: shade($color-white, 2);
 $color-red: hsl(0, 50%, 50%);
 
 $background-color: $color-black;
 
+$structure-color: $color-gray;
+
 $background-alt-color: $color-red;
+$background-alt-light-color: make-lighter($color-red, 1);
 $background-alt-gradient: linear-gradient(260deg, $color-black 0, $color-black 1.5em, $color-white 2em, $color-red 10em);
 
-$text-color: $color-white;
+$text-color-weak: shade($color-white, 3);
+$text-color: shade($color-white, 1);
+$text-color-strong: $color-white;
 
 // Fonts
 
@@ -27,4 +49,25 @@ $base-font-size: 16px;
 		@return 1rem;
 	}
 	@return typographic-scale($i_level - 1) * $typographic-scale-coefficient;
+}
+
+// Effects
+
+@function box-shadow-3D($i_height: 1) {
+	@return rgba(0, 0, 0, .4) .25rem*$i_height .25rem*$i_height .5rem*$i_height 0;
+}
+
+@mixin bordered-section {
+	border: 2px solid $structure-color;
+	padding: 1em;
+	margin: 1em 0;
+
+	& > header {
+		background-color: $structure-color;
+		color: $background-color;
+		font-weight: bold;
+		padding: .5em;
+		margin: -1em -1em 1em -1em;
+		text-transform: uppercase;
+	}
 }

@@ -1,0 +1,4 @@
+<div class="{{include.type}}-info__item info__item">
+	<div class="{{include.type}}-info__item__label info__item__label">{{include.label}}</div>
+	<div class="{{include.type}}-info__item__value info__item__value {% unless include.value %}no-value{% endunless %}">{{include.value | default: "no value"}}</div>
+</div>

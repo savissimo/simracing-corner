@@ -56,6 +56,14 @@ plugins:
 collections:
   authors:
     output: true
+  tracks:
+    output: true
+  cars:
+    output: true
+  liveries:
+    output: true
+  tools:
+    output: true
 
 defaults:
   - scope:
@@ -68,6 +76,31 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      author: simone
+  - scope:
+      path: ""
+      type: "tracks"
+    values:
+      layout: "track"
+      author: simone
+      fictionalLocality: false
+  - scope:
+      path: ""
+      type: "cars"
+    values:
+      layout: "car"
+      author: simone
+  - scope:
+      path: ""
+      type: "liveries"
+    values:
+      layout: "livery"
+      author: simone
+  - scope:
+      path: ""
+      type: "tools"
+    values:
+      layout: "tool"
       author: simone
   - scope:
       path: ""

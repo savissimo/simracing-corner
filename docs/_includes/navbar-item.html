@@ -1,0 +1,18 @@
+{% assign children = include.navbarItem.children != nil and include.navbarItem.children.size > 0 %}
+<div class="navbar-item {% if page.url == {{include.navbarItem.link}} %}current{% endif %}">
+	{% if children %}
+	<span class="navbar-link">{{include.navbarItem.name}}</span>
+	{% else %}
+	<a href="{{include.navbarItem.link}}" class="navbar-link">{{include.navbarItem.name}}</a>
+	{% endif %}
+	{% if children %}
+	<div class="navbar-item-children">
+		<div class="navbar-item {% if page.url == {{include.navbarItem.link}} %}current{% endif %}">
+			<a href="{{include.navbarItem.link}}" class="navbar-link">Index</a>
+		</div>
+		{% for childItem in include.navbarItem.children %}
+		{% include navbar-item.html navbarItem=childItem %}
+		{% endfor %}
+	</div>
+	{% endif %}
+</div>

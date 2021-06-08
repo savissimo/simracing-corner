@@ -1,6 +1,9 @@
 @import "variables";
 @import "media-queries";
 
+@import "widgets";
+@import "tracks";
+
 html, body {
 	min-height: 100vh;
 }
@@ -9,6 +12,7 @@ html {
 	background-color: $background-color;
 	color: $text-color;
 	font-size: $small-font-size;
+	font-weight: 100;
 
 	@include respond-above(sm) {
 		font-size: $base-font-size;
@@ -51,11 +55,11 @@ a {
 	}
 }
 
-h1 { font-size: typographic-scale(4); font-family: $font-heading; text-transform: uppercase; }
-h2 { font-size: typographic-scale(3); font-family: $font-heading; text-transform: capitalize; }
-h3 { font-size: typographic-scale(2); font-family: $font-heading; }
-h4 { font-size: typographic-scale(1); font-family: $font-heading; }
-h5 { font-size: typographic-scale(0); font-family: $font-heading; }
+h1 { font-size: typographic-scale(4); font-family: $font-heading; color: $text-color-strong; text-transform: uppercase; }
+h2 { font-size: typographic-scale(3); font-family: $font-heading; color: $text-color-strong; text-transform: capitalize; }
+h3 { font-size: typographic-scale(2); font-family: $font-heading; color: $text-color-strong; }
+h4 { font-size: typographic-scale(1); font-family: $font-heading; color: $text-color-strong; }
+h5 { font-size: typographic-scale(0); font-family: $font-heading; color: $text-color-strong; }
 
 p { line-height: 1.4; }
 
@@ -68,6 +72,7 @@ body > header {
 	gap: 0 1rem;
 	
 	background: $background-alt-gradient;
+	color: $text-color-strong;
 	
 	@include respond-above(sm) {
 		grid-template: "logo nav" auto / auto 1fr;
@@ -92,10 +97,42 @@ body > header {
 	padding: 1rem;
 
 	display: flex;
-	gap: 1rem;
 
-	a {
-		display: inline-block;
+	//font-variant: small-caps;
+	text-transform: uppercase;
+	font-weight: bold;
+
+	.navbar-item {
+		position: relative;
+		
+		& > .navbar-link {
+			display: inline-block;
+			padding: .5em;
+		}
+
+		.navbar-item-children {
+			display: none;
+			position: absolute;
+			background: $background-alt-color;
+			border: 4px solid $background-alt-light-color;
+			box-shadow: box-shadow-3D();
+
+			& > .navbar-item {
+				min-width: 10em;
+
+				& > .navbar-link {
+					width: 100%;
+				}
+			}
+		}
+		
+		&:hover > .navbar-item-children, & > .navbar-item-children.open, .navbar-item:hover > .navbar-item-children, .navbar-item > .navbar-item-children.open {
+			display: block;
+		}
+
+		&:hover {
+			background-color: $background-alt-light-color;
+		}
 	}
 }
 

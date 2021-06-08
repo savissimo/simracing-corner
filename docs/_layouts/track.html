@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<h1>{{page.name}}</h1>
+
+<section class="track-info">
+	<header>Track info</header>
+	{% include info-item.html type="track" label="Official name" value=page.fullName %}
+	{% include info-item.html type="track" label="Country" value=page.country %}
+	{% capture locality %}{{page.locality}}{% if page.fictionalLocality %} (fictional){% endif %}{% endcapture %}
+	{% include info-item.html type="track" label="Location" value=locality %}
+	{% include info-item.html type="track" label="Track length" value=page.trackLength %}
+	{% include info-item.html type="track" label="Number of corners" value=page.cornersCount %}
+</section>

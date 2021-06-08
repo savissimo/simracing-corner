@@ -1,0 +1,14 @@
+.info__item {
+	display: flex;
+}
+
+.info__item__label {
+	width: 14em;
+}
+
+.info__item__value {
+	&.no-value {
+		color: $text-color-weak;
+		font-style: italic;
+	}
+}
