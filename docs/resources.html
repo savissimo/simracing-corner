@@ -1,0 +1,20 @@
+---
+megabuttons:
+  - name: Tracks
+    link: /tracks
+  - name: Liveries
+    link: /liveries
+  - name: Cars
+    link: /cars
+  - name: Tools
+    link: /tools
+---
+<h1>Resources</h1>
+
+<div class="megabuttons-container">
+	{% for megabutton in page.megabuttons %}
+	<a class="megabutton" href="{{megabutton.link}}">
+		<header>{{megabutton.name}}</header>
+	</a>
+	{% endfor %}
+</div>
