@@ -1,3 +1,36 @@
+.track-pictures {
+	@include bordered-section();
+	display: grid;
+	grid-template: "header" auto "logo" auto "main" auto "map" auto / 1fr;
+	gap: 1rem;
+	/*padding-top: 0;*/
+	
+	@include respond-above(sm) {
+		grid-template: "header header" auto "main logo" auto "main map" auto / auto auto;
+	}
+	
+	& > header {
+		grid-area: header;
+		margin-bottom: 0;
+	}
+	
+	& > .track-pictures__logo {
+		grid-area: logo;
+	}
+	
+	& > .track-pictures__main {
+		grid-area: main;
+	}
+	
+	& > .track-pictures__map {
+		grid-area: map;
+	}
+}
+
+.track-description {
+	margin: 4rem 0;
+}
+
 .track-info {
 	@include bordered-section;
 }

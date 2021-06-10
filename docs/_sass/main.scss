@@ -55,13 +55,30 @@ a {
 	}
 }
 
-h1 { font-size: typographic-scale(4); font-family: $font-heading; color: $text-color-strong; text-transform: uppercase; }
-h2 { font-size: typographic-scale(3); font-family: $font-heading; color: $text-color-strong; text-transform: capitalize; }
-h3 { font-size: typographic-scale(2); font-family: $font-heading; color: $text-color-strong; }
-h4 { font-size: typographic-scale(1); font-family: $font-heading; color: $text-color-strong; }
-h5 { font-size: typographic-scale(0); font-family: $font-heading; color: $text-color-strong; }
+em {
+	font-style: italic;
+}
 
-p { line-height: 1.4; }
+strong {
+	font-weight: bold;
+}
+
+:not(header), header.allow-h-style {
+	& > h1 { font-size: typographic-scale(5); font-family: $font-heading; color: $text-color-strong; text-transform: uppercase; }
+	& > h2 { font-size: typographic-scale(4); font-family: $font-heading; color: $text-color-strong; text-transform: capitalize; }
+	& > h3 { font-size: typographic-scale(3); font-family: $font-heading; color: $text-color-strong; }
+	& > h4 { font-size: typographic-scale(2); font-family: $font-heading; color: $text-color-strong; }
+	& > h5 { font-size: typographic-scale(1); font-family: $font-heading; color: $text-color-strong; }
+	& > h1, & > h2, & > h3, & > h4, & > h5, & > h6 {
+		margin: 1em 0;
+		line-height: 1.2;
+	}
+}
+
+p { 
+	line-height: 1.4; 
+	margin: .7em 0;
+}
 
 /**********************************************************************************************************************/
 
@@ -154,4 +171,9 @@ body > footer {
 	padding: 1rem;
 	font-size: .8rem;
 	color: $text-color-weak;
+	text-align: center;
+
+	@include respond-above(sm) {
+		text-align: left;
+	}
 }

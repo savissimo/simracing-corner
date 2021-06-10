@@ -24,6 +24,8 @@ $color-red: hsl(0, 50%, 50%);
 $background-color: $color-black;
 
 $structure-color: $color-gray;
+$structure-color-dark: shade($color-gray, 2);
+$structure-color-darker: shade($color-gray, 4);
 
 $background-alt-color: $color-red;
 $background-alt-light-color: make-lighter($color-red, 1);
