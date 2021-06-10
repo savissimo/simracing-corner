@@ -144,4 +144,14 @@ body > main {
 body > .main-sidebar {
 	display: none;
 	padding: 1rem;
+
+	@include respond-above(sm) {
+		display: block;
+	}
+}
+
+body > footer {
+	padding: 1rem;
+	font-size: .8rem;
+	color: $text-color-weak;
 }
