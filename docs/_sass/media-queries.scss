@@ -103,3 +103,9 @@ $breakpoints: (
     }
   }
 }
+
+@mixin respond-on-hover-devices() {
+  @media (hover: hover) {
+    @content;
+  }
+}

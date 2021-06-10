@@ -143,8 +143,16 @@ body > header {
 			}
 		}
 		
-		&:hover > .navbar-item-children, & > .navbar-item-children.open, .navbar-item:hover > .navbar-item-children, .navbar-item > .navbar-item-children.open {
+		& > .navbar-item-children.open, 
+		.navbar-item > .navbar-item-children.open {
 			display: block;
+		}
+
+		@include respond-on-hover-devices {
+			&:hover > .navbar-item-children, 
+			.navbar-item:hover > .navbar-item-children {
+				display: block;
+			}
 		}
 
 		&:hover {
