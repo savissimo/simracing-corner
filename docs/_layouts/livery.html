@@ -1,3 +1,48 @@
 ---
 layout: default
 ---
+{% capture mainPictureURL %}{% include livery-image.html liverySlug=page.slug image=page.image %}{% endcapture %}
+{% assign car = site.data.cars | where: "code", livery.car | first %}
+{% assign author = site.authors | where: "code", livery.author | first %}
+{% capture carName %}{{car.brand}} {{car.model}}{% endcapture %}
+{% capture date %}{{page.date | date_to_long_string}}{% endcapture %}
+
+<h1>{{page.name}}</h1>
+
+<div class="main-picture">{% include image.html src=mainPictureURL %}</div>
+
+<div class="livery-description">
+	{{page.content}}
+</div>
+
+<section class="livery-info">
+	<header><h2>Livery info</h2></header>
+	{% include info-item.html type="livery" label="Car" value=carName %}
+	{% include info-item.html type="livery" label="Driver" value=page.driver %}
+	{% include info-item.html type="livery" label="Author" value=author.name %}
+	{% include info-item.html type="livery" label="Date" value=date %}
+	{% include info-item.html type="livery" label="Event" value=page.event %}
+</section>
+
+<section class="picture-gallery" data-interactive>
+	<div class="picture-gallery__pictures">
+		{% for galleryItem in page.gallery %}
+		{% capture pictureURL %}{% include livery-image.html liverySlug=page.slug image=galleryItem.image %}{% endcapture %}
+		<figure class="picture-gallery__picture">
+			{% include image.html src=pictureURL %}
+		</figure>
+		{% endfor %}
+		<figure class="picture-gallery__picture">
+			<img src="https://via.placeholder.com/1920x1080.jpg" />
+		</figure>
+		<figure class="picture-gallery__picture">
+			<img src="https://via.placeholder.com/1080x1920.jpg" />
+		</figure>
+	</div>
+	<div class="picture-gallery__front-window">
+	</div>
+	<div class="picture-gallery__controls">
+		<button class="picture-gallery__control" data-action="prev">&#10092;</button>
+		<button class="picture-gallery__control" data-action="next">&#10093;</button>
+	</div>
+</section>

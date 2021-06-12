@@ -1,0 +1,11 @@
+.main-picture {
+	width: 100%;
+	
+	& > img {
+		width: 100%;
+	}
+}
+
+.livery-info {
+	@include bordered-section;
+}

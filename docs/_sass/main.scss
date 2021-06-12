@@ -1,9 +1,6 @@
 @import "variables";
 @import "media-queries";
 
-@import "widgets";
-@import "tracks";
-
 html, body {
 	min-height: 100vh;
 }
@@ -13,7 +10,7 @@ html {
 	color: $text-color;
 	font-size: $small-font-size;
 	font-weight: 100;
-
+	
 	@include respond-above(sm) {
 		font-size: $base-font-size;
 	}
@@ -22,7 +19,7 @@ html {
 body {
 	display: grid;
 	grid-template: "header" auto "nav" auto "main" 1fr "footer" auto / 1fr;
-
+	
 	font-family: $font-body;
 	line-height: 1.2;
 	
@@ -104,7 +101,7 @@ body > header {
 		text-transform: uppercase;
 		background: $background-alt-color;
 	}
-
+	
 	& > nav {
 		grid-area: nav;
 	}
@@ -112,13 +109,13 @@ body > header {
 
 .main-navbar {
 	padding: 1rem;
-
+	
 	display: flex;
-
+	
 	//font-variant: small-caps;
 	text-transform: uppercase;
 	font-weight: bold;
-
+	
 	.navbar-item {
 		position: relative;
 		
@@ -126,17 +123,17 @@ body > header {
 			display: inline-block;
 			padding: .5em;
 		}
-
+		
 		.navbar-item-children {
 			display: none;
 			position: absolute;
 			background: $background-alt-color;
 			border: 4px solid $background-alt-light-color;
 			box-shadow: box-shadow-3D();
-
+			
 			& > .navbar-item {
 				min-width: 10em;
-
+				
 				& > .navbar-link {
 					width: 100%;
 				}
@@ -147,14 +144,14 @@ body > header {
 		.navbar-item > .navbar-item-children.open {
 			display: block;
 		}
-
+		
 		@include respond-on-hover-devices {
 			&:hover > .navbar-item-children, 
 			.navbar-item:hover > .navbar-item-children {
 				display: block;
 			}
 		}
-
+		
 		&:hover {
 			background-color: $background-alt-light-color;
 		}
@@ -169,7 +166,7 @@ body > main {
 body > .main-sidebar {
 	display: none;
 	padding: 1rem;
-
+	
 	@include respond-above(sm) {
 		display: block;
 	}
@@ -180,9 +177,12 @@ body > footer {
 	font-size: .8rem;
 	color: $text-color-weak;
 	text-align: center;
-
+	
 	@include respond-above(sm) {
 		text-align: left;
 	}
 }
 
+@import "widgets";
+@import "tracks";
+@import "liveries";

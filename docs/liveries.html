@@ -23,7 +23,7 @@ title: Liveries
 			</span>
 		</div>
 		<a class="image-link" href={{livery.url}}>
-			<img src="/assets/images/liveries/{{livery.slug}}/{{livery.image}}" alt="{{livery.name}}" />
+			<img src="{% include livery-image.html liverySlug=livery.slug image=livery.image %}" alt="{{livery.name}}" />
 		</a>
 	</li>
 	{% endfor %}

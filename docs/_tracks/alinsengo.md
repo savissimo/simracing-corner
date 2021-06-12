@@ -1,4 +1,5 @@
 ---
+title: Alinsengo | Track
 name: Alinsengo
 fullName: Autodromo Carlo Salamano di Alinsengo
 sim: assettocorsa

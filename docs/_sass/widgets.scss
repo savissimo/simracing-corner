@@ -142,6 +142,100 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
+$picture-gallery-navbar-height: 10rem;
+$picture-gallery-frontwindow-height: 36rem;
+
+.picture-gallery {
+	position: relative;
+
+	.picture-gallery__pictures {
+		display: flex;
+		justify-content: start;
+		gap: 1rem;
+		height: $picture-gallery-navbar-height;
+		
+		overflow: hidden;
+		
+		.picture-gallery__picture {
+			flex: 0 0 10rem;
+			cursor: pointer;
+
+			& > img {
+				transition: transform 1s ease;
+	
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+	
+	.picture-gallery__picture {
+		overflow: hidden;
+
+		& > img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: center center;
+		}
+	}
+
+	.picture-gallery__front-window {
+		width: 100%;
+		height: $picture-gallery-frontwindow-height;
+		
+		@include centered-content;
+	}
+
+	.picture-gallery__controls {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+
+		.picture-gallery__control {
+			background: transparent;
+			color: $text-color;
+			border: none;
+			font-size: 4rem;
+
+			&[data-action="prev"] {
+				position: absolute;
+				top: $picture-gallery-navbar-height;
+				left: 0;
+				text-align: left;
+				width: 6rem;
+				height: $picture-gallery-frontwindow-height;
+				padding: 1rem;
+				
+				&:hover {
+					background: linear-gradient(to right, $color-black 0%, transparent 100%);
+				}
+			}
+			
+			&[data-action="next"] {
+				position: absolute;
+				top: $picture-gallery-navbar-height;
+				right: 0;
+				text-align: right;
+				width: 6rem;
+				height: $picture-gallery-frontwindow-height;
+				padding: 1rem;
+				
+				&:hover {
+					background: linear-gradient(to left, $color-black 0%, transparent 100%);
+				}
+			}
+		}
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
 .info__item {
 	display: flex;
 	padding: .5em 0;
