@@ -5,9 +5,26 @@ title: Liveries
 
 {% assign cars = site.liveries | group_by: "car" %}
 {% assign carBrands = cars %}
-{% for livery in site.liveries  %}
-<div class="livery">
-	<header>{{livery.name}}</header>
-	<img src="/assets/images/liveries/{{livery.slug}}/{{livery.image}}" alt="{{livery.name}}" />
-</div>
-{% endfor %}
+<ul class="liveries-container">
+	{% assign liveries = site.liveries | sort: "date" | reverse %}
+	{% for livery in liveries %}
+	{% assign car = site.data.cars | where: "code", livery.car | first %}
+	{% assign author = site.authors | where: "code", livery.author | first %}
+	<li class="livery">
+		<div class="content">
+			<header>
+				<a href={{livery.url}}>
+					{{livery.name}}
+				</a>
+			</header>
+			<span class="livery-info">
+				<span class="livery-info__car">{{car.brand}} {{car.model}}</span>
+				<a href="{{author.url}}"><span class="livery-info__author">{{author.name}}</span></a>
+			</span>
+		</div>
+		<a class="image-link" href={{livery.url}}>
+			<img src="/assets/images/liveries/{{livery.slug}}/{{livery.image}}" alt="{{livery.name}}" />
+		</a>
+	</li>
+	{% endfor %}
+</ul>
