@@ -58,11 +58,13 @@ collections:
     output: true
   tracks:
     output: true
-  cars:
+  carmods:
     output: true
   liveries:
     output: true
   tools:
+    output: true
+  sims:
     output: true
 
 defaults:
@@ -86,9 +88,9 @@ defaults:
       fictionalLocality: false
   - scope:
       path: ""
-      type: "cars"
+      type: "carmods"
     values:
-      layout: "car"
+      layout: "carmod"
       author: simone
   - scope:
       path: ""
@@ -102,6 +104,11 @@ defaults:
     values:
       layout: "tool"
       author: simone
+  - scope:
+      path: ""
+      type: "sim"
+    values:
+      layout: "sim"
   - scope:
       path: ""
     values:

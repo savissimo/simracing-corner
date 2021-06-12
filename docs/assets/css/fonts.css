@@ -10,6 +10,11 @@
 }
 
 @font-face {
+	font-family: 'Sansita One';
+	src: url('../fonts/SansitaOne.ttf') format('truetype');
+}
+
+@font-face {
 	font-family: 'Amble';
 	src: url('../fonts/Amble-Regular.ttf') format('truetype');
 	font-weight: normal;

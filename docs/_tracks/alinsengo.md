@@ -1,6 +1,7 @@
 ---
 name: Alinsengo
 fullName: Autodromo Carlo Salamano di Alinsengo
+sim: assettocorsa
 categories: road fictional clockwise
 locality: Cavagneto, Piedmont
 country: Italy

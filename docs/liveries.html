@@ -1,0 +1,13 @@
+---
+title: Liveries
+---
+<h1>Car liveries</h1>
+
+{% assign cars = site.liveries | group_by: "car" %}
+{% assign carBrands = cars %}
+{% for livery in site.liveries  %}
+<div class="livery">
+	<header>{{livery.name}}</header>
+	<img src="/assets/images/liveries/{{livery.slug}}/{{livery.image}}" alt="{{livery.name}}" />
+</div>
+{% endfor %}
