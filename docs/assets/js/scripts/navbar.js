@@ -18,7 +18,6 @@ document.addEventListener('click', (e) => {
 			return
 		}
 		if (!$navbarItem.contains(e.target)) {
-			console.log('closing', $navbarItem)
 			$childrenItemsContainer.classList.remove('open')
 		}
 	})
