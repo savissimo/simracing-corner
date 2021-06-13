@@ -22,6 +22,7 @@ $color-gray: shade($color-white, 2);
 $color-red: hsl(0, 50%, 50%);
 
 $background-color: $color-black;
+$background-color-light: make-lighter($color-black, .5);
 
 $structure-color: $color-gray;
 $structure-color-dark: shade($color-gray, 2);
