@@ -65,6 +65,7 @@
 		width: 100%;
 		height: 100%;
 		flex-direction: column;
+		z-index: 10;
 		
 		font-size: 1em;
 		color: $text-color-strong;
@@ -80,9 +81,14 @@
 		font-size: typographic-scale(1);
 		color: $text-color-strong;
 		letter-spacing: .5em;
+		z-index: 10;
 		
 		transition-duration: 1s;
 		transition-property: font-size;
+	}
+
+	& > .image-link {
+		@include centered-content;
 	}
 	
 	& > img, & > .image-link {
@@ -90,7 +96,7 @@
 		position: absolute;
 		object-position: center center;
 		object-fit: cover;
-		z-index: -10;
+		z-index: 0;
 		filter: contrast(40%) brightness(60%) blur(1px);
 		
 		transition-duration: 1s;
@@ -124,7 +130,7 @@
 .livery {
 	@extend %item-with-picture;
 
-	.livery-info {
+	.livery-details {
 		display: flex;
 		flex-wrap: wrap;
 		color: $text-color;

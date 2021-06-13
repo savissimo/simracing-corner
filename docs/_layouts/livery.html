@@ -25,6 +25,7 @@ layout: default
 	{% include info-item.html type="livery" label="Event" value=page.event %}
 </section>
 
+{% if page.gallery.size > 0 %}
 <section class="picture-gallery" data-interactive>
 	<div class="picture-gallery__pictures">
 		{% for galleryItem in page.gallery %}
@@ -46,3 +47,4 @@ layout: default
 		<button class="picture-gallery__control" data-action="next">&#10093;</button>
 	</div>
 </section>
+{% endif %}
