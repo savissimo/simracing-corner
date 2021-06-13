@@ -33,7 +33,7 @@ function movePictureToFrontWindow($i_picture, $i_frontWindow, $i_prevPictureBtn,
 				$i_nextPictureBtn.style.display = 'block'
 				$i_nextPictureBtn.replaceWith($newNextButton) // removes all previously registered event listeners
 				$newNextButton.addEventListener('click', function(e) {
-					console.log(' ==> moving to ' + nextIndex + '/' + $i_pictures.length)
+					//console.log(' ==> moving to ' + nextIndex + '/' + $i_pictures.length)
 					movePictureToFrontWindow($i_pictures[nextIndex], $i_frontWindow, $newPrevButton, $newNextButton, $i_pictures)
 				})
 				//console.log('next now moves to ' + nextIndex + '/' + $i_pictures.length)
