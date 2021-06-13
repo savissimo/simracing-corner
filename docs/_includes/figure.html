@@ -1,0 +1,12 @@
+<figure>
+	{% if include.src %}
+	<img src="{{include.src}}" alt="{{include.alt | default: include.src}}" />
+	{% else %}
+	<div class="img__no-picture-available">
+		<span>No picture available</span>
+	</div>
+	{% endif %}
+	{% if include.caption %}
+	<figcaption>{{include.caption}}</figcaption>
+	{% endif %}
+</figure>

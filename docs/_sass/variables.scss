@@ -30,6 +30,7 @@ $structure-color-dark: shade($color-gray, 2);
 $structure-color-darker: shade($color-gray, 4);
 
 $accent-color: $color-red;
+$accent-color-light: make-lighter($color-red, 2);
 
 $shadow-color: rgba(0, 0, 0, .4);
 

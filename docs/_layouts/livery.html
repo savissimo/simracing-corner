@@ -5,20 +5,21 @@ layout: default
 {% assign car = site.data.cars | where: "code", livery.car | first %}
 {% assign author = site.authors | where: "code", livery.author | first %}
 {% capture carName %}{{car.brand}} {{car.model}}{% endcapture %}
+{% capture driver %}{{page.driver}} (#{{page.carNumber}}){% endcapture %}
 {% capture date %}{{page.date | date_to_long_string}}{% endcapture %}
 
 <h1>{{page.name}}</h1>
 
-<div class="main-picture">{% include image.html src=mainPictureURL %}</div>
+<section class="main-picture">{% include image.html src=mainPictureURL %}</section>
 
-<div class="livery-description">
+<section class="livery-description">
 	{{page.content}}
-</div>
+</section>
 
 <section class="livery-info">
 	<header><h2>Livery info</h2></header>
 	{% include info-item.html type="livery" label="Car" value=carName %}
-	{% include info-item.html type="livery" label="Driver" value=page.driver %}
+	{% include info-item.html type="livery" label="Driver" value=driver %}
 	{% include info-item.html type="livery" label="Author" value=author.name %}
 	{% include info-item.html type="livery" label="Date" value=date %}
 	{% include info-item.html type="livery" label="Event" value=page.event %}
