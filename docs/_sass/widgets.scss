@@ -149,6 +149,9 @@ $picture-gallery-frontwindow-height-sm: 36rem;
 
 .picture-gallery {
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 
 	.picture-gallery__pictures {
 		display: flex;
