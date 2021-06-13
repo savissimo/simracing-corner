@@ -29,6 +29,10 @@ $structure-color: $color-gray;
 $structure-color-dark: shade($color-gray, 2);
 $structure-color-darker: shade($color-gray, 4);
 
+$accent-color: $color-red;
+
+$shadow-color: rgba(0, 0, 0, .4);
+
 $background-alt-color: $color-red;
 $background-alt-light-color: make-lighter($color-red, 1);
 $background-alt-gradient: linear-gradient(260deg, $color-black 0, $color-black 1.5em, $color-white 2em, $color-red 10em);
@@ -53,13 +57,18 @@ $base-font-size: 16px;
 	@if $i_level == 0 {
 		@return 1rem;
 	}
-	@return typographic-scale($i_level - 1) * $typographic-scale-coefficient;
+	@if $i_level > 0 {
+		@return typographic-scale($i_level - 1) * $typographic-scale-coefficient;
+	}
+	@else {
+		@return typographic-scale($i_level + 1) / $typographic-scale-coefficient;
+	}
 }
 
 // Effects
 
 @function box-shadow-3D($i_height: 1) {
-	@return rgba(0, 0, 0, .4) .25rem*$i_height .25rem*$i_height .5rem*$i_height 0;
+	@return $shadow-color .25rem*$i_height .25rem*$i_height .5rem*$i_height 0;
 }
 
 @mixin bordered-section {

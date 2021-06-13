@@ -30,6 +30,9 @@ layout: default
 		{% capture pictureURL %}{% include livery-image.html liverySlug=page.slug image=galleryItem.image %}{% endcapture %}
 		<figure class="picture-gallery__picture">
 			{% include image.html src=pictureURL %}
+			{% if galleryItem.caption %}
+			<figcaption>{{galleryItem.caption}}</figcaption>
+			{% endif %}
 		</figure>
 		{% endfor %}
 	</div>
