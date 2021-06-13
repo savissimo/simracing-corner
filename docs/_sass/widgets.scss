@@ -69,7 +69,7 @@
 		font-size: 1em;
 		color: $text-color-strong;
 		text-transform: uppercase;
-		text-shadow: $color-black 0 .25em .25em;
+		text-shadow: $color-black 0 .5rem .5rem;
 		
 		transition-duration: 1s;
 		transition-property: font-size, color, opacity;
@@ -143,7 +143,9 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 $picture-gallery-navbar-height: 10rem;
-$picture-gallery-frontwindow-height: 36rem;
+$picture-gallery-navbar-height-sm: 10rem;
+$picture-gallery-frontwindow-height: 20rem;
+$picture-gallery-frontwindow-height-sm: 36rem;
 
 .picture-gallery {
 	position: relative;
@@ -154,7 +156,11 @@ $picture-gallery-frontwindow-height: 36rem;
 		gap: 1rem;
 		height: $picture-gallery-navbar-height;
 		
-		overflow: hidden;
+		overflow: scroll hidden;
+
+		@include respond-above(sm) {
+			height: $picture-gallery-navbar-height-sm;
+		}
 		
 		.picture-gallery__picture {
 			flex: 0 0 10rem;
@@ -172,6 +178,8 @@ $picture-gallery-frontwindow-height: 36rem;
 	
 	.picture-gallery__picture {
 		overflow: hidden;
+		width: 100%;
+		height: 100%;
 
 		& > img {
 			width: 100%;
@@ -185,6 +193,10 @@ $picture-gallery-frontwindow-height: 36rem;
 		width: 100%;
 		height: $picture-gallery-frontwindow-height;
 		
+		@include respond-above(sm) {
+			height: $picture-gallery-frontwindow-height;
+		}
+		
 		@include centered-content;
 	}
 
@@ -194,12 +206,23 @@ $picture-gallery-frontwindow-height: 36rem;
 		left: 0;
 		bottom: 0;
 		right: 0;
+		pointer-events: none;
 
 		.picture-gallery__control {
 			background: transparent;
 			color: $text-color;
 			border: none;
 			font-size: 4rem;
+			pointer-events: auto;
+			text-shadow: $color-black 0 .5rem .5rem;
+			
+			&:hover {
+				color: $text-color;
+			}
+			
+			@include respond-on-hover-devices {
+				color: $text-color-weak;
+			}
 
 			&[data-action="prev"] {
 				position: absolute;
