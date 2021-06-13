@@ -151,15 +151,16 @@ $picture-gallery-frontwindow-height-sm: 36rem;
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	background-color: $color-middle-gray;
 
 	.picture-gallery__pictures {
 		display: flex;
 		justify-content: start;
 		gap: 1rem;
 		height: $picture-gallery-navbar-height;
+		padding: 1rem;
 		
-		overflow: scroll hidden;
+		overflow: hidden;
 
 		@include respond-above(sm) {
 			height: $picture-gallery-navbar-height-sm;
@@ -195,9 +196,10 @@ $picture-gallery-frontwindow-height-sm: 36rem;
 	.picture-gallery__front-window {
 		width: 100%;
 		height: $picture-gallery-frontwindow-height;
+		padding: 1rem;
 		
 		@include respond-above(sm) {
-			height: $picture-gallery-frontwindow-height;
+			height: $picture-gallery-frontwindow-height-sm;
 		}
 		
 		@include centered-content;
@@ -216,6 +218,8 @@ $picture-gallery-frontwindow-height-sm: 36rem;
 			color: $text-color;
 			border: none;
 			font-size: 4rem;
+			padding: 1rem;
+			cursor: pointer;
 			pointer-events: auto;
 			text-shadow: $color-black 0 .5rem .5rem;
 			
@@ -224,35 +228,58 @@ $picture-gallery-frontwindow-height-sm: 36rem;
 			}
 			
 			@include respond-on-hover-devices {
-				color: $text-color-weak;
+				color: $text-color;
 			}
 
-			&[data-action="prev"] {
+			&[data-action="scroll-pictures-left"], &[data-action="scroll-pictures-right"] {
+				position: absolute;
+				top: 0;
+				width: 6rem;
+				height: $picture-gallery-navbar-height;
+				font-size: 2rem;
+				
+				@include respond-above(sm) {
+					height: $picture-gallery-navbar-height-sm;
+				}
+			}
+			
+			&[data-action="prev"], &[data-action="next"] {
 				position: absolute;
 				top: $picture-gallery-navbar-height;
-				left: 0;
-				text-align: left;
 				width: 6rem;
 				height: $picture-gallery-frontwindow-height;
-				padding: 1rem;
+				padding: 2rem;
+				
+				@include respond-above(sm) {
+					top: $picture-gallery-navbar-height-sm;
+					height: $picture-gallery-frontwindow-height-sm;
+				}
+			}
+			
+			&[data-action="prev"], &[data-action="scroll-pictures-left"] {
+				left: 0;
+				text-align: left;
 				
 				&:hover {
 					background: linear-gradient(to right, $color-black 0%, transparent 100%);
 				}
 			}
 			
-			&[data-action="next"] {
-				position: absolute;
-				top: $picture-gallery-navbar-height;
+			&[data-action="next"], &[data-action="scroll-pictures-right"] {
 				right: 0;
 				text-align: right;
-				width: 6rem;
-				height: $picture-gallery-frontwindow-height;
-				padding: 1rem;
 				
 				&:hover {
 					background: linear-gradient(to left, $color-black 0%, transparent 100%);
 				}
+			}
+			
+			&[data-action="scroll-pictures-left"] {
+				background: linear-gradient(to right, $color-black 0%, transparent 100%);
+			}
+			
+			&[data-action="scroll-pictures-right"] {
+				background: linear-gradient(to left, $color-black 0%, transparent 100%);
 			}
 		}
 	}

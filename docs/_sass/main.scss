@@ -6,7 +6,7 @@ html, body {
 }
 
 html {
-	background-color: $background-color;
+	background-color: $background-color-light;
 	color: $text-color;
 	font-size: $small-font-size;
 	font-weight: 100;
@@ -161,7 +161,7 @@ body > header {
 body > main {
 	max-width: 60em;
 	padding: 1rem;
-	background-color: $background-color-light;
+	background-color: $background-color;
 }
 
 body > .main-sidebar {

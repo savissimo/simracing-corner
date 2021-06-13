@@ -20,9 +20,10 @@ $color-black: hsl(180, 20%, 10%);
 $color-white: hsl(0, 5%, 90%);
 $color-gray: shade($color-white, 2);
 $color-red: hsl(0, 50%, 50%);
+$color-middle-gray: #767676;
 
 $background-color: $color-black;
-$background-color-light: make-lighter($color-black, .5);
+$background-color-light: make-lighter($color-black, .3);
 
 $structure-color: $color-gray;
 $structure-color-dark: shade($color-gray, 2);
