@@ -3,8 +3,24 @@ title: Track mods
 ---
 <h1>Track mods</h1>
 
-{% for track in site.tracks %}
-<div class="track">
-	<h3><a href="{{track.url}}">{{track.name}}</a></h3>
-</div>
-{% endfor %}
+<ul class="tracks-container">
+	{% assign tracks = site.tracks | sort: "date" | reverse %}
+	{% for track in tracks %}
+	{% assign author = site.authors | where: "code", livery.author | first %}
+	<li class="track">
+		<div class="content">
+			<header>
+				<a href="{{track.url}}">
+					{{track.name}}
+				</a>
+			</header>
+			<span class="track-details">
+				<a href="{{author.url}}"><span class="track-details__author">{{author.name}}</span></a>
+			</span>
+		</div>
+		<a class="image-link" href={{track.url}}>
+			<img src="{% include track-image.html trackSlug=track.slug image=track.picture %}" alt="{{track.name}}" />
+		</a>
+	</li>
+	{% endfor %}
+</ul>

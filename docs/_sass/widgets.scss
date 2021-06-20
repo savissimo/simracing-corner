@@ -121,16 +121,16 @@
 	}
 }
 
-.liveries-container {
+.liveries-container, .tracks-container {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 }
 
-.livery {
+.livery, .track {
 	@extend %item-with-picture;
 
-	.livery-details {
+	.livery-details, .track-details {
 		display: flex;
 		flex-wrap: wrap;
 		color: $text-color;
