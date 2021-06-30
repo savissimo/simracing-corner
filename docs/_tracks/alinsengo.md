@@ -8,6 +8,8 @@ locality: Cavagneto, Piedmont
 country: Italy
 fictionalLocality: true
 trackLength: 5.4 km (3.36 mi)
+picture: /assets/images/tracks/alinsengo/picture.jpg
+map: /assets/images/tracks/alinsengo/layout.png
 ---
 
 The fictional track of Alinsengo (officially *Autodromo Carlo Salamano di Alinsengo*) is a Grade 1 venue, designed with Formula cars in mind. It's 5.4 km (3.36 mi) long main layout offers long straights with heavy braking zones, good overtaking spots, tight corners, technical esse sections, and several elevation changes that promise to entertain drivers and challenge their technical skills.
