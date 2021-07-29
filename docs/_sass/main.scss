@@ -227,6 +227,30 @@ body > footer {
 	}
 }
 
+table {
+	border: 1px solid $structure-color;
+
+	th, td {
+		padding: .25em .5em;
+	}
+
+	th {
+		background-color: $structure-color;
+		color: $background-color;
+		font-weight: bold;
+	}
+
+	tr:nth-child(even) {
+		background-color: $structure-color-darker;
+	}
+}
+
+figure {
+	display: flex;
+	justify-content: center;
+}
+
 @import "widgets";
 @import "tracks";
 @import "liveries";
+@import "blog";
