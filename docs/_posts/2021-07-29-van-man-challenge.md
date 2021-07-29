@@ -9,7 +9,7 @@ As the **Van Man Challenge** starts on [SRS](https://www.simracingsystem.com), *
 
 ## The Van Man Challenge
 
-![Van Man Challenge](/assets/images/posts/TedHoughFordTransit.png)
+{% figure /assets/images/posts/TedHoughFordTransit.png | Van Man Challenge %}
 
 The series, hosted by the renowned simracer and real-life driving coach **Ted Hough**, will feature six weekly 20-minute races, and will be contested in the **2005 Ford Transit**. The official calendar of the series includes fan-favourite tracks like Calabogie, Ahvenisto, the Glen and Charade; the latter will host the series finale and will feature a longer 1-hour race.
 
@@ -26,16 +26,16 @@ As usual, Ted asked the **Roundel Racing** community to choose the car for the s
 
 ## A new sponsor, a new livery, and a tribute
 
-![Ben Rangia Panda Racing's 2005 Ford Transit livery](/assets/images/liveries/ac-ford_transit-ben_rangia_panda_racing/01.jpg)
+{% figure /assets/images/liveries/ac-ford_transit-ben_rangia_panda_racing/01.jpg | Ben Rangia Panda Racing's 2005 Ford Transit livery %}
 
 For this series, we are excited to announce a partnership with Ben Rangia, our new sponsor. We have always been committed to racing in style, and Ben Rangia shares our passion for style. The team's official name will be **Ben Rangia Panda Racing**.
 
-![Ben Rangia Panda Racing's 2005 Ford Transit livery](/assets/images/liveries/ac-ford_transit-ben_rangia_panda_racing/02.jpg)
+{% figure /assets/images/liveries/ac-ford_transit-ben_rangia_panda_racing/02.jpg | Ben Rangia Panda Racing's 2005 Ford Transit livery %}
 
 With this all-new livery, Panda Racing debuts never-seen-before colors to honour an outrageous series in the Ford Transit. Racing this van is also our tribute to the late Sabine Schmitz, who passed away earlier this year.
 
-![Ben Rangia Panda Racing's 2005 Ford Transit livery](/assets/images/liveries/ac-ford_transit-ben_rangia_panda_racing/03.jpg)
+{% figure /assets/images/liveries/ac-ford_transit-ben_rangia_panda_racing/03.jpg | Ben Rangia Panda Racing's 2005 Ford Transit livery %}
 
 **Ben Rangia** is universally acclaimed as one of the world's top fashion designers. His products are known and appreciated for their creativity and their forward-looking attitude. Hi latest line, Ben Rangia Urban Wear, is conceived for people who embrace change and want to express their idea of "future".
 
-![Ben Rangia Panda Racing's 2005 Ford Transit livery](/assets/images/liveries/ac-ford_transit-ben_rangia_panda_racing/04.jpg)
+{% figure /assets/images/liveries/ac-ford_transit-ben_rangia_panda_racing/04.jpg | Ben Rangia Panda Racing's 2005 Ford Transit livery %}
