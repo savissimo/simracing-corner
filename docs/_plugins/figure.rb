@@ -29,7 +29,7 @@ module Jekyll
 
 			captionElement = nil
 			if (!caption.nil? && !caption.empty?)
-				captionElement = "<figcaption>#{caption}</figcaption>"
+				captionElement = "<figcaption>#{markdownifier.convert(caption)}</figcaption>"
 			end
 
 			"<figure class=\"content-figure\">
