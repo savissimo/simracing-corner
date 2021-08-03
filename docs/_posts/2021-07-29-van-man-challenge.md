@@ -1,6 +1,7 @@
 ---
 title: "Panda Racing enters the Van Man Challenge with a new sponsor"
 date: 2021-07-29 10:10:00 +0200
+author: panda-racing
 categories: panda-racing
 tags: panda-racing srs roundel-racing series-entry livery van-man-challenge
 excerpt: "The series will feature the Ford Transit that Sabine Schmitz famously drove around the Nordschleife."
